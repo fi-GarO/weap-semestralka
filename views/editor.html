@@ -1,0 +1,23 @@
+{% extends "layout.html" %} 
+
+{% block main %}
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-12 blog-main">
+            {% for task in tasks %}
+            <h1>{{ task.mainText }}</h1>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="mainText" name="mainText" 
+                    placeholder="Enter mainText"  required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% endfor %}
+        </div>
+      
+    </div>
+  
+</main>
+
+{% endblock %}

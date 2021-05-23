@@ -1,0 +1,29 @@
+{% extends "layout.html" %} 
+
+{% block main %}
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-12 blog-main">
+            <h3>Add New Post</h3>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="mainText" name="mainText" 
+                    {% if text %}value="{{ text.mainText }}"{% endif %} placeholder="Enter mainText"  required>
+                </div>
+                {% if text %}
+                    <input type="hidden" name="id" id="id" value="{{ text._id }}">
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!-- /.blog-main -->
+    </div>
+    <!-- /.row -->
+</main>
+<script>
+        var editor = new MediumEditor('.editable', {
+            
+        });
+</script>
+<!-- /.container -->
+{% endblock %}
